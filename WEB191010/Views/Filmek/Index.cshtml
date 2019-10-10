@@ -1,0 +1,21 @@
+﻿@model IEnumerable<WEB191010.Models.Film>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<h2>Filmek</h2>
+<br />
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr><th>film címe</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var f in Model)
+        {
+            <tr><td>@f.Cim</td></tr>
+        }
+    </tbody>
+</table>

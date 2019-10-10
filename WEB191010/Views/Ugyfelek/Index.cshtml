@@ -1,0 +1,32 @@
+﻿@model IEnumerable<WEB191010.Models.Ugyfel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<h2>Ügyfelek</h2>
+<br />
+
+@if (!Model.Any())
+{
+    <p>Még nincsenek ügyfelek :'((((</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr><th>ügyfél neve</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var u in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink(u.Nev, "Reszletek", "Ugyfelek", new { id = u.Id }, null)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

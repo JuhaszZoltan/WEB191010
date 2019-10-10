@@ -1,0 +1,29 @@
+﻿@*@using WEB190920Elso.Models;*@
+@*@model WEB190920Elso.Models.Film*@
+@model WEB191010.ViewModels.RandomFilmViewModel
+
+
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var cssClassNev = Model.Kolcsonzok.Count > 5 ? "nepszeru" : null;
+}
+
+<h2 class="@cssClassNev">@Model.Film.Cim</h2>
+
+@if (Model.Kolcsonzok.Count == 0)
+{
+    <text>RazorView exclusive tag</text>
+}
+else
+{
+    <ul>
+        @foreach (var k in Model.Kolcsonzok)
+        {
+            <li>@k.Nev</li>
+        }
+    </ul>
+}
