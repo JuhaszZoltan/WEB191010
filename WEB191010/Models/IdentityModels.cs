@@ -20,6 +20,8 @@ namespace WEB191010.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<ElofizetesTipus> Elofizetesek { get; set; }
+        public DbSet<Ugyfel> Ugyfelek { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
