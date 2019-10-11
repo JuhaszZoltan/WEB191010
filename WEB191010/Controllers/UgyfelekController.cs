@@ -10,7 +10,7 @@ namespace WEB191010.Controllers
     public class UgyfelekController : Controller
     {
         // GET: Ugyfelek
-        ApplicationDbContext _context;
+        readonly ApplicationDbContext _context;
 
         public UgyfelekController()
         {
