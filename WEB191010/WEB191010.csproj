@@ -197,12 +197,37 @@
     <Compile Include="Migrations\201910181447338_AddTestNevek.Designer.cs">
       <DependentUpon>201910181447338_AddTestNevek.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910181605183_AddNevToEF.cs" />
+    <Compile Include="Migrations\201910181605183_AddNevToEF.Designer.cs">
+      <DependentUpon>201910181605183_AddNevToEF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910181606347_UpdateEFNevek.cs" />
+    <Compile Include="Migrations\201910181606347_UpdateEFNevek.Designer.cs">
+      <DependentUpon>201910181606347_UpdateEFNevek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910181614474_AddUgyfelSzulDatum.cs" />
+    <Compile Include="Migrations\201910181614474_AddUgyfelSzulDatum.Designer.cs">
+      <DependentUpon>201910181614474_AddUgyfelSzulDatum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910181617454_UpdateTesztUgyfelSzulDatum.cs" />
+    <Compile Include="Migrations\201910181617454_UpdateTesztUgyfelSzulDatum.Designer.cs">
+      <DependentUpon>201910181617454_UpdateTesztUgyfelSzulDatum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910181647236_FilmekPimpUp.cs" />
+    <Compile Include="Migrations\201910181647236_FilmekPimpUp.Designer.cs">
+      <DependentUpon>201910181647236_FilmekPimpUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910181649050_PopFilmek.cs" />
+    <Compile Include="Migrations\201910181649050_PopFilmek.Designer.cs">
+      <DependentUpon>201910181649050_PopFilmek.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ElofizetesTipus.cs" />
     <Compile Include="Models\Film.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Mufaj.cs" />
     <Compile Include="Models\Ugyfel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -216,6 +241,8 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Imgs\killbill01.png" />
+    <Content Include="Content\Imgs\matrix01.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -338,6 +365,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910181447338_AddTestNevek.resx">
       <DependentUpon>201910181447338_AddTestNevek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910181605183_AddNevToEF.resx">
+      <DependentUpon>201910181605183_AddNevToEF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910181606347_UpdateEFNevek.resx">
+      <DependentUpon>201910181606347_UpdateEFNevek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910181614474_AddUgyfelSzulDatum.resx">
+      <DependentUpon>201910181614474_AddUgyfelSzulDatum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910181617454_UpdateTesztUgyfelSzulDatum.resx">
+      <DependentUpon>201910181617454_UpdateTesztUgyfelSzulDatum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910181647236_FilmekPimpUp.resx">
+      <DependentUpon>201910181647236_FilmekPimpUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910181649050_PopFilmek.resx">
+      <DependentUpon>201910181649050_PopFilmek.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

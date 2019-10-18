@@ -12,6 +12,7 @@ namespace WEB191010.Models
         [Required]
         [StringLength(50)]
         public string Nev { get; set; }
+        public DateTime? SzuletesiDatum { get; set; }
         public bool HirlevelFeliratkozas { get; set; }
         public ElofizetesTipus ElofizetesTipus { get; set; }
         public int ElofizetesTipusId { get; set; }

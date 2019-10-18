@@ -7,3 +7,15 @@
 <br />
 <h2>@Model.Nev</h2>
 <br />
+
+@{ var megvanadva = Model.SzuletesiDatum.HasValue; }
+
+<ul>
+    <li>@Model.ElofizetesTipus.Nev</li>
+        @if (megvanadva)
+        {
+            <li>
+                @(((DateTime)(Model.SzuletesiDatum)).ToShortDateString())
+            </li>
+        }
+</ul>

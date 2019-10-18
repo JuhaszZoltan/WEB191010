@@ -5,12 +5,9 @@ using System.Web;
 
 namespace WEB191010.Models
 {
-    public class ElofizetesTipus
+    public class Mufaj
     {
         public int Id { get; set; }
         public string Nev { get; set; }
-        public int Dij { get; set; }
-        public int Kedvezmeny { get; set; }
-        public int IdotartamHonap { get; set; }
     }
 }
