@@ -185,6 +185,10 @@
     <Compile Include="Migrations\201910111718031_PopulateElofizetesek.Designer.cs">
       <DependentUpon>201910111718031_PopulateElofizetesek.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910181431561_AddDataAnnotations01.cs" />
+    <Compile Include="Migrations\201910181431561_AddDataAnnotations01.Designer.cs">
+      <DependentUpon>201910181431561_AddDataAnnotations01.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ElofizetesTipus.cs" />
@@ -317,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910111718031_PopulateElofizetesek.resx">
       <DependentUpon>201910111718031_PopulateElofizetesek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910181431561_AddDataAnnotations01.resx">
+      <DependentUpon>201910181431561_AddDataAnnotations01.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
