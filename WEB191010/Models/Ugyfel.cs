@@ -14,6 +14,6 @@ namespace WEB191010.Models
         public string Nev { get; set; }
         public bool HirlevelFeliratkozas { get; set; }
         public ElofizetesTipus ElofizetesTipus { get; set; }
-
+        public int ElofizetesTipusId { get; set; }
     }
 }
