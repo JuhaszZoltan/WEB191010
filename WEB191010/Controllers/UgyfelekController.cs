@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -24,13 +25,13 @@ namespace WEB191010.Controllers
 
         public ViewResult Index()
         {
-            var ufk = _context.Ugyfelek.ToList();
+            var ufk = _context.Ugyfelek.Include(u => u.ElofizetesTipus).ToList();
             return View(ufk);
         }
 
         public ActionResult Reszletek(int id)
         {
-            var uf = _context.Ugyfelek.SingleOrDefault(x => x.Id == id);
+            var uf = _context.Ugyfelek.Include(u => u.ElofizetesTipus).SingleOrDefault(x => x.Id == id);
 
             if (uf is null) return HttpNotFound();
             else return View(uf);
