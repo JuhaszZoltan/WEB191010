@@ -335,6 +335,7 @@
     <Content Include="Views\Filmek\Random.cshtml" />
     <Content Include="Views\Ugyfelek\Index.cshtml" />
     <Content Include="Views\Ugyfelek\Reszletek.cshtml" />
+    <Content Include="Views\Shared\_FilmBsCard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
