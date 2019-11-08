@@ -18,10 +18,57 @@ namespace WEB191010.Controllers
             _context = new ApplicationDbContext();
         }
 
+        public ActionResult Uj()
+        {
+            var vm = new UjUgyfelViewModel()
+            {
+                ElofizetesTipusok = _context.Elofizetesek.ToList()
+            };
+
+            return View("UgyfelForm", vm);
+        }
+        [HttpPost]
+        public ActionResult Mentes(Ugyfel ugyfel)
+        {
+            if (ugyfel.Id == 0)
+            {
+                _context.Ugyfelek.Add(ugyfel);
+            }
+            else
+            {
+                var letezoUgyfel = 
+                    _context.Ugyfelek.SingleOrDefault(u => u.Id == ugyfel.Id);
+
+                letezoUgyfel.Nev = ugyfel.Nev;
+                letezoUgyfel.SzuletesiDatum = ugyfel.SzuletesiDatum;
+                letezoUgyfel.HirlevelFeliratkozas = ugyfel.HirlevelFeliratkozas;
+                letezoUgyfel.ElofizetesTipusId = ugyfel.ElofizetesTipusId;
+            }
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Ugyfelek");
+        }
+
+        public ActionResult Szerkesztes(int id)
+        {
+            var ugyfel = _context.Ugyfelek.SingleOrDefault(u => u.Id == id);
+            if (ugyfel == null) return HttpNotFound();
+
+            var vm = new UjUgyfelViewModel()
+            {
+                ElofizetesTipusok = _context.Elofizetesek.ToList(),
+                Ugyfel = ugyfel
+                
+            };
+
+            return View("UgyfelForm", vm);
+        }
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();    
         }
+
+
 
         public ViewResult Index()
         {

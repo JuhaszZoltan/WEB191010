@@ -1,0 +1,34 @@
+﻿@model WEB191010.Models.UjUgyfelViewModel
+@{
+    ViewBag.Title = "Uj";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<h2>Új ügyfél hozzáadása</h2>
+<br />
+@using (Html.BeginForm("Mentes", "Ugyfelek"))
+{
+    <div class="form-group">
+        @*<label for="Nev">Név</label>*@
+        @Html.LabelFor(u => u.Ugyfel.Nev)
+        @Html.TextBoxFor(u => u.Ugyfel.Nev, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(u => u.Ugyfel.SzuletesiDatum)
+        @Html.TextBoxFor(u => u.Ugyfel.SzuletesiDatum, "{0:yyyy-MM-dd}", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(u => u.Ugyfel.ElofizetesTipusId)
+        @Html.DropDownListFor(
+       u => u.Ugyfel.ElofizetesTipusId,
+       new SelectList(Model.ElofizetesTipusok, "Id", "Nev"),
+       "válassz a listából...",
+       new { @class = "form-check-label" })
+    </div>
+    <div class="form-group  form-check">
+        @Html.CheckBoxFor(u => u.Ugyfel.HirlevelFeliratkozas, new { @class = "form-check-input" })
+        @Html.LabelFor(u => u.Ugyfel.HirlevelFeliratkozas, new { @class = "form-check-label" })
+    </div>
+    @Html.HiddenFor(m => m.Ugyfel.Id)
+    <button type="submit" class="btn btn-primary">Új ügyfél adatainak mentése</button>
+}
