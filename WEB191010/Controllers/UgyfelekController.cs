@@ -20,16 +20,30 @@ namespace WEB191010.Controllers
 
         public ActionResult Uj()
         {
-            var vm = new UjUgyfelViewModel()
+            var vm = new UgyfelFormViewModel()
             {
+                Ugyfel = new Ugyfel(),
                 ElofizetesTipusok = _context.Elofizetesek.ToList()
             };
 
             return View("UgyfelForm", vm);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Mentes(Ugyfel ugyfel)
         {
+            if (!ModelState.IsValid)
+            {
+                var vm = new UgyfelFormViewModel
+                {
+                    Ugyfel = ugyfel,
+                    ElofizetesTipusok = _context.Elofizetesek.ToList()
+                };
+
+                return View("UgyfelForm", vm);
+            }
+
+
             if (ugyfel.Id == 0)
             {
                 _context.Ugyfelek.Add(ugyfel);
@@ -37,12 +51,19 @@ namespace WEB191010.Controllers
             else
             {
                 var letezoUgyfel = 
-                    _context.Ugyfelek.SingleOrDefault(u => u.Id == ugyfel.Id);
+                    _context.Ugyfelek.Single(u => u.Id == ugyfel.Id);
+
+                //Microsofték így csinálnák, de ez annyira nem nyerő
+                //TryUpdateModel(letezoUgyfel);
 
                 letezoUgyfel.Nev = ugyfel.Nev;
                 letezoUgyfel.SzuletesiDatum = ugyfel.SzuletesiDatum;
                 letezoUgyfel.HirlevelFeliratkozas = ugyfel.HirlevelFeliratkozas;
                 letezoUgyfel.ElofizetesTipusId = ugyfel.ElofizetesTipusId;
+
+                //ezt meg ha nem akarja valaki kézzel csinálni, használhat AutoMapper-t
+                //https://automapper.org/
+                //akkor kb így nézne ki: Mapper.Map(ugyfel, letezoUgyfel);
             }
             _context.SaveChanges();
 
@@ -54,7 +75,7 @@ namespace WEB191010.Controllers
             var ugyfel = _context.Ugyfelek.SingleOrDefault(u => u.Id == id);
             if (ugyfel == null) return HttpNotFound();
 
-            var vm = new UjUgyfelViewModel()
+            var vm = new UgyfelFormViewModel()
             {
                 ElofizetesTipusok = _context.Elofizetesek.ToList(),
                 Ugyfel = ugyfel

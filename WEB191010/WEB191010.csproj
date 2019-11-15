@@ -227,9 +227,10 @@
     <Compile Include="Models\Film.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Min18EvesHaElofizeto.cs" />
     <Compile Include="Models\Mufaj.cs" />
     <Compile Include="Models\Ugyfel.cs" />
-    <Compile Include="Models\UjUgyfelViewModel.cs" />
+    <Compile Include="Models\UgyfelFormViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Models\RandomFilmViewModel.cs" />

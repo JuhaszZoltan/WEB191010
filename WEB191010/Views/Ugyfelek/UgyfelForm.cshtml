@@ -1,4 +1,4 @@
-﻿@model WEB191010.Models.UjUgyfelViewModel
+﻿@model WEB191010.Models.UgyfelFormViewModel
 @{
     ViewBag.Title = "Uj";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,27 +8,36 @@
 <br />
 @using (Html.BeginForm("Mentes", "Ugyfelek"))
 {
+    /* @Html.ValidationSummary() */
     <div class="form-group">
         @*<label for="Nev">Név</label>*@
-        @Html.LabelFor(u => u.Ugyfel.Nev)
-        @Html.TextBoxFor(u => u.Ugyfel.Nev, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Ugyfel.Nev)
+        @Html.TextBoxFor(m => m.Ugyfel.Nev, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Ugyfel.Nev)
     </div>
     <div class="form-group">
-        @Html.LabelFor(u => u.Ugyfel.SzuletesiDatum)
-        @Html.TextBoxFor(u => u.Ugyfel.SzuletesiDatum, "{0:yyyy-MM-dd}", new { @class = "form-control" })
+        @Html.LabelFor(m => m.Ugyfel.SzuletesiDatum)
+        @Html.TextBoxFor(m => m.Ugyfel.SzuletesiDatum, "{0:yyyy-MM-dd}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Ugyfel.SzuletesiDatum)
     </div>
     <div class="form-group">
-        @Html.LabelFor(u => u.Ugyfel.ElofizetesTipusId)
+        @Html.LabelFor(m => m.Ugyfel.ElofizetesTipusId)
         @Html.DropDownListFor(
-       u => u.Ugyfel.ElofizetesTipusId,
+       m => m.Ugyfel.ElofizetesTipusId,
        new SelectList(Model.ElofizetesTipusok, "Id", "Nev"),
-       "válassz a listából...",
-       new { @class = "form-check-label" })
+       "válassz a listából...", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Ugyfel.ElofizetesTipusId)
     </div>
     <div class="form-group  form-check">
-        @Html.CheckBoxFor(u => u.Ugyfel.HirlevelFeliratkozas, new { @class = "form-check-input" })
-        @Html.LabelFor(u => u.Ugyfel.HirlevelFeliratkozas, new { @class = "form-check-label" })
+        @Html.CheckBoxFor(m => m.Ugyfel.HirlevelFeliratkozas, new { @class = "form-check-input" })
+        @Html.LabelFor(m => m.Ugyfel.HirlevelFeliratkozas, new { @class = "form-check-label" })
     </div>
     @Html.HiddenFor(m => m.Ugyfel.Id)
+    @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Új ügyfél adatainak mentése</button>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
 }
