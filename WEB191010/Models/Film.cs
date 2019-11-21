@@ -14,19 +14,22 @@ namespace WEB191010.Models
         public int KeszletDb { get; set; }
         public string ImgReference { get; set; } = null;
 
-        public string[] mufajokMintTomb;
-        public string Mufajok
-        { 
-            set
-            {
-                mufajokMintTomb = value.Split(',');
-            }
+        public string[] Mufajok
+        {
             get
             {
-                string getMufajok = "";
-                foreach (var m in mufajokMintTomb) getMufajok += m + ", ";
-                return getMufajok.Trim().TrimEnd(',');
+                return MufajokDbCol.Split(',');
+            }
+            set
+            {
+                var mdc = "";
+                foreach (var m in value)
+                {
+                    mdc += $"{m}, ";
+                }
+                MufajokDbCol = mdc.Trim().TrimEnd(',');
             }
         }
+        public string MufajokDbCol { get; set; }
     }
 }

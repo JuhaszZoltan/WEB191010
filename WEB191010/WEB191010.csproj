@@ -229,6 +229,14 @@
     <Compile Include="Migrations\201911211707389_rePopFilmek.Designer.cs">
       <DependentUpon>201911211707389_rePopFilmek.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911211742209_FilmMufajDbCserePP.cs" />
+    <Compile Include="Migrations\201911211742209_FilmMufajDbCserePP.Designer.cs">
+      <DependentUpon>201911211742209_FilmMufajDbCserePP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911211748258_FilmReRePopGrrrr.cs" />
+    <Compile Include="Migrations\201911211748258_FilmReRePopGrrrr.Designer.cs">
+      <DependentUpon>201911211748258_FilmReRePopGrrrr.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ElofizetesTipus.cs" />
@@ -400,6 +408,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911211707389_rePopFilmek.resx">
       <DependentUpon>201911211707389_rePopFilmek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911211742209_FilmMufajDbCserePP.resx">
+      <DependentUpon>201911211742209_FilmMufajDbCserePP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911211748258_FilmReRePopGrrrr.resx">
+      <DependentUpon>201911211748258_FilmReRePopGrrrr.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
