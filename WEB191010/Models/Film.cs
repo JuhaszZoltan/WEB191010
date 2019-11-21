@@ -13,7 +13,20 @@ namespace WEB191010.Models
         public DateTime BeszerzesDatum { get; set; }
         public int KeszletDb { get; set; }
         public string ImgReference { get; set; } = null;
-        public Mufaj Mufaj { get; set; }
-        public int MufajId { get; set; }
+
+        public string[] mufajokMintTomb;
+        public string Mufajok
+        { 
+            set
+            {
+                mufajokMintTomb = value.Split(',');
+            }
+            get
+            {
+                string getMufajok = "";
+                foreach (var m in mufajokMintTomb) getMufajok += m + ", ";
+                return getMufajok.Trim().TrimEnd(',');
+            }
+        }
     }
 }

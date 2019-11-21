@@ -24,7 +24,7 @@ namespace WEB191010.Controllers
 
         public ViewResult Index()
         {
-            var flms = _context.Filmek.Include(f => f.Mufaj).ToList();
+            var flms = _context.Filmek.ToList();
             return View(flms);
         }
 

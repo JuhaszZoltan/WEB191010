@@ -221,6 +221,14 @@
     <Compile Include="Migrations\201910181649050_PopFilmek.Designer.cs">
       <DependentUpon>201910181649050_PopFilmek.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911211703445_filmekUjra.cs" />
+    <Compile Include="Migrations\201911211703445_filmekUjra.Designer.cs">
+      <DependentUpon>201911211703445_filmekUjra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911211707389_rePopFilmek.cs" />
+    <Compile Include="Migrations\201911211707389_rePopFilmek.Designer.cs">
+      <DependentUpon>201911211707389_rePopFilmek.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ElofizetesTipus.cs" />
@@ -228,7 +236,6 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Min18EvesHaElofizeto.cs" />
-    <Compile Include="Models\Mufaj.cs" />
     <Compile Include="Models\Ugyfel.cs" />
     <Compile Include="Models\UgyfelFormViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -387,6 +394,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910181649050_PopFilmek.resx">
       <DependentUpon>201910181649050_PopFilmek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911211703445_filmekUjra.resx">
+      <DependentUpon>201911211703445_filmekUjra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911211707389_rePopFilmek.resx">
+      <DependentUpon>201911211707389_rePopFilmek.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
