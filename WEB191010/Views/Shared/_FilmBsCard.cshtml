@@ -9,10 +9,29 @@
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">@Model.Cim</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+                    <p class="card-text">
+                        @for (int i = 0; i < Model.Mufajok.Length; i++)
+                        {
+                            @Html.ActionLink($"{Model.Mufajok[i]}", "Mufajok", new { mufaj = Model.Mufajok[i] })
+                            if (i != Model.Mufajok.Length - 1)
+                            {<text>, </text>}
+                        }
+                    </p>
+
                 </div>
             </div>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="btn btn-sm btn-primary btn-block">Kölcsönzés</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-sm btn-secondary btn-block">Szerkesztés</button>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

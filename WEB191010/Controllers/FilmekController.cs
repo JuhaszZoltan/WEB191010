@@ -28,6 +28,12 @@ namespace WEB191010.Controllers
             return View(flms);
         }
 
+        public ActionResult Mufajok(string mufaj)
+        {
+            var flms = _context.Filmek.Where(f => f.MufajokDbCol.Contains(mufaj));
+            return View("Index", flms);
+        }
+
         #region faszsagok
         //private IEnumerable<Film> GetData()
         //{
