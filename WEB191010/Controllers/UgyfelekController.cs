@@ -13,10 +13,7 @@ namespace WEB191010.Controllers
         // GET: Ugyfelek
         readonly ApplicationDbContext _context;
 
-        public UgyfelekController()
-        {
-            _context = new ApplicationDbContext();
-        }
+        public UgyfelekController() => _context = new ApplicationDbContext();
 
         public ActionResult Uj()
         {
@@ -84,10 +81,7 @@ namespace WEB191010.Controllers
 
             return View("UgyfelForm", vm);
         }
-        protected override void Dispose(bool disposing)
-        {
-            _context.Dispose();    
-        }
+        protected override void Dispose(bool disposing) => _context.Dispose();    
 
 
 

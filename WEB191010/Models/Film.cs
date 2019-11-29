@@ -16,17 +16,11 @@ namespace WEB191010.Models
 
         public string[] Mufajok
         {
-            get
-            {
-                return MufajokDbCol.Split(',');
-            }
+            get { return MufajokDbCol.Split(','); }
             set
             {
                 var mdc = "";
-                foreach (var m in value)
-                {
-                    mdc += $"{m}, ";
-                }
+                foreach (var m in value) mdc += $"{m}, ";
                 MufajokDbCol = mdc.Trim().TrimEnd(',');
             }
         }
