@@ -14,11 +14,12 @@
 }
 else
 {
-    <table class="table table-bordered table-hover">
+    <table id="tablazat" class="table table-bordered table-hover">
         <thead>
             <tr>
                 <th>ügyfél neve</th>
                 <th>előfizetés típusa</th>
+                <th>törlés</th>
             </tr>
 
         </thead>
@@ -32,8 +33,22 @@ else
                     <td>
                         @u.ElofizetesTipus.Nev
                     </td>
+                    <td>
+                        <button class="btn-link js-torles">Törlés</button>
+                    </td>
                 </tr>
             }
         </tbody>
     </table>
+}
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#tablazat .js-torles").on("click", function () {
+                confirm("Biztosan törölni akarod ezt az ügyfelet?");
+            });
+        });
+    </script>
 }

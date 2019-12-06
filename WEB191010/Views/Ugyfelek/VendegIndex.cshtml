@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WEB191010.Models.Ugyfel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<h2>Ügyfelek</h2>
+<br />
+
+@if (!Model.Any())
+{
+    <p>Még nincsenek ügyfelek :'((((</p>
+}
+else
+{
+    <table id="tablazat" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>ügyfél neve</th>
+                <th>előfizetés típusa</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var u in Model)
+            {
+                <tr>
+                    <td>
+                        @u.Nev
+                    </td>
+                    <td>
+                        @u.ElofizetesTipus.Nev
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

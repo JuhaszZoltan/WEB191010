@@ -15,6 +15,7 @@ namespace WEB191010.Controllers
 
         public UgyfelekController() => _context = new ApplicationDbContext();
 
+        [Authorize(Roles = RoleNevek.Admin)]
         public ActionResult Uj()
         {
             var vm = new UgyfelFormViewModel()
@@ -25,6 +26,8 @@ namespace WEB191010.Controllers
 
             return View("UgyfelForm", vm);
         }
+
+        [Authorize(Roles = RoleNevek.Admin)]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Mentes(Ugyfel ugyfel)
@@ -67,6 +70,7 @@ namespace WEB191010.Controllers
             return RedirectToAction("Index", "Ugyfelek");
         }
 
+        [Authorize(Roles = RoleNevek.Admin)]
         public ActionResult Szerkesztes(int id)
         {
             var ugyfel = _context.Ugyfelek.SingleOrDefault(u => u.Id == id);
@@ -83,14 +87,16 @@ namespace WEB191010.Controllers
         }
         protected override void Dispose(bool disposing) => _context.Dispose();    
 
-
-
         public ViewResult Index()
         {
             var ufk = _context.Ugyfelek.Include(u => u.ElofizetesTipus).ToList();
-            return View(ufk);
+            if (User.IsInRole(RoleNevek.Admin))
+                return View("AdminIndex", ufk);
+
+            return View("VendegIndex", ufk);
         }
 
+        [Authorize(Roles = RoleNevek.Admin)]
         public ActionResult Reszletek(int id)
         {
             var uf = _context.Ugyfelek.Include(u => u.ElofizetesTipus).SingleOrDefault(x => x.Id == id);

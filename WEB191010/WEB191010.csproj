@@ -241,6 +241,10 @@
     <Compile Include="Migrations\201911291545029_ujFilmek.Designer.cs">
       <DependentUpon>201911291545029_ujFilmek.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912061642595_SeedRoles.cs" />
+    <Compile Include="Migrations\201912061642595_SeedRoles.Designer.cs">
+      <DependentUpon>201912061642595_SeedRoles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ElofizetesTipus.cs" />
@@ -248,6 +252,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Min18EvesHaElofizeto.cs" />
+    <Compile Include="Models\RoleNevek.cs" />
     <Compile Include="Models\Ugyfel.cs" />
     <Compile Include="Models\UgyfelFormViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -363,10 +368,11 @@
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Filmek\Index.cshtml" />
     <Content Include="Views\Filmek\Random.cshtml" />
-    <Content Include="Views\Ugyfelek\Index.cshtml" />
+    <Content Include="Views\Ugyfelek\AdminIndex.cshtml" />
     <Content Include="Views\Ugyfelek\Reszletek.cshtml" />
     <Content Include="Views\Shared\_FilmBsCard.cshtml" />
     <Content Include="Views\Ugyfelek\UgyfelForm.cshtml" />
+    <Content Include="Views\Ugyfelek\VendegIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -430,6 +436,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911291545029_ujFilmek.resx">
       <DependentUpon>201911291545029_ujFilmek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912061642595_SeedRoles.resx">
+      <DependentUpon>201912061642595_SeedRoles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
