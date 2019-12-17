@@ -79,6 +79,10 @@ namespace WEB191010.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "Kedvenc Szín")]
+        public string KedvencSzin { get; set; }
     }
 
     public class ResetPasswordViewModel
