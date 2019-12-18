@@ -16,13 +16,13 @@ namespace WEB191010
             routes.MapMvcAttributeRoutes();
 
             #region classic routing
-            // / filmek / megjelenes / 2015 / 02
+            //// ./filmek/megjelenes/2015/02
             //routes.MapRoute(
             //    "FilmekMegjelenesSzerint",
             //    "filmek/megjelenes/{ev}/{honap}",
             //    new { controller = "Filmek", action = "Megjelenes" },
             //    new { ev = @"\d{4}", honap = @"\d{2}" }
-            //    );
+            //);
             #endregion
 
             routes.MapRoute(

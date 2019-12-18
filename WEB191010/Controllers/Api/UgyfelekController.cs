@@ -26,7 +26,7 @@ namespace WEB191010.Controllers.Api
             return _context.Ugyfelek.ToList().Select(Mapper.Map<Ugyfel, UgyfelDto>);
         }
 
-	    //GET - /api/ugyfelek/1
+        //GET - /api/ugyfelek/1
         public UgyfelDto GetUgyfel(int id)
         {
             var ugyfel = _context.Ugyfelek.SingleOrDefault(u => u.Id == id);
@@ -37,7 +37,7 @@ namespace WEB191010.Controllers.Api
             return Mapper.Map<Ugyfel, UgyfelDto>(ugyfel);
         }
 
-    	//POST - /api/ugyfelek
+        //POST - /api/ugyfelek
         [HttpPost]
         public UgyfelDto CreateUgyfel(UgyfelDto ugyfelDto)
         {
@@ -54,7 +54,7 @@ namespace WEB191010.Controllers.Api
             return ugyfelDto;
         }
 
-    	//PUT - /api/ugyfelek/1
+        //PUT - /api/ugyfelek/1
         [HttpPut]
         public void UpdateUgyfel(int id, UgyfelDto ugyfelDto)
         {

@@ -179,7 +179,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
-    <Compile Include="App_Start\MappingProfil.cs" />
+    <Compile Include="App_Start\MappingProfile.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -289,6 +289,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Imgs\cloud_atlas.jpg" />
     <Content Include="Content\Imgs\donnie.jpg" />
+    <Content Include="Content\Imgs\ewplchldr.png" />
     <Content Include="Content\Imgs\fight_club.jpg" />
     <Content Include="Content\Imgs\hateful.jpg" />
     <Content Include="Content\Imgs\joker.jpg" />

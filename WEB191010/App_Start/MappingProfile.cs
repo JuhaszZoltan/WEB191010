@@ -8,9 +8,9 @@ using WEB191010.Dtos;
 
 namespace WEB191010.App_Start
 {
-    public class MappingProfil : Profile
+    public class MappingProfile : Profile
     {
-        public MappingProfil()
+        public MappingProfile()
         {
             Mapper.CreateMap<Ugyfel, UgyfelDto>();
             Mapper.CreateMap<UgyfelDto, Ugyfel>();

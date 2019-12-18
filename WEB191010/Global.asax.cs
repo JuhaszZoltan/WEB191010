@@ -15,7 +15,7 @@ namespace WEB191010
     {
         protected void Application_Start()
         {
-            Mapper.Initialize(cfg => cfg.AddProfile<MappingProfil>());
+            Mapper.Initialize(cfg => cfg.AddProfile<MappingProfile>());
             GlobalConfiguration.Configure(WebApiConfig.Register);
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
