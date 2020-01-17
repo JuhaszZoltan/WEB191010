@@ -34,7 +34,7 @@ else
                         @u.ElofizetesTipus.Nev
                     </td>
                     <td>
-                        <button class="btn-link js-torles">Törlés</button>
+                        <button data-ugyfel-id="@u.Id" class="btn-link js-torles">Törlés</button>
                     </td>
                 </tr>
             }
@@ -47,7 +47,22 @@ else
     <script>
         $(document).ready(function () {
             $("#tablazat .js-torles").on("click", function () {
-                confirm("Biztosan törölni akarod ezt az ügyfelet?");
+                var gomb = $(this);
+                bootbox.confirm(
+                    "Biztosan törölni akarod ezt az ügyfelet?",
+                    function (valasz) {
+                        if (valasz) {
+                            $.ajax({
+                                url: "/api/ugyfelek/" + gomb.attr("data-ugyfel-id"),
+                                method: "DELETE",
+                                success: function () {
+                                    //console.log("SIKER!!");
+                                    gomb.parents("tr").remove();
+                                    //location.reload();
+                                }
+                            });
+                        }
+                    });
             });
         });
     </script>
