@@ -13,6 +13,7 @@ namespace WEB191010.Dtos
         public string Nev { get; set; }
         public DateTime? SzuletesiDatum { get; set; }
         public bool HirlevelFeliratkozas { get; set; }
+        public ElofizetesTipusDto ElofizetesTipus { get; set; }
         public int ElofizetesTipusId { get; set; }
     }
 }

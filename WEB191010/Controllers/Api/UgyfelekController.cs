@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Migrations.Model;
 using System.Linq;
 using System.Net;
@@ -23,7 +24,10 @@ namespace WEB191010.Controllers.Api
         //GET - /api/ugyfelek
         public IEnumerable<UgyfelDto> GetUgyfelek()
         {
-            return _context.Ugyfelek.ToList().Select(Mapper.Map<Ugyfel, UgyfelDto>);
+            return _context.Ugyfelek
+                .Include(u => u.ElofizetesTipus)
+                .ToList()
+                .Select(Mapper.Map<Ugyfel, UgyfelDto>);
         }
 
         //GET - /api/ugyfelek/1

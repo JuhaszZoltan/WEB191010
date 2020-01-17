@@ -1,5 +1,4 @@
-﻿@model IEnumerable<WEB191010.Models.Ugyfel>
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -8,45 +7,47 @@
 <h2>Ügyfelek</h2>
 <br />
 
-@if (!Model.Any())
-{
-    <p>Még nincsenek ügyfelek :'((((</p>
-}
-else
-{
-    <table id="tablazat" class="table table-bordered table-hover">
-        <thead>
-            <tr>
-                <th>ügyfél neve</th>
-                <th>előfizetés típusa</th>
-                <th>törlés</th>
-            </tr>
-
-        </thead>
-        <tbody>
-            @foreach (var u in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.ActionLink(u.Nev, "Szerkesztes", "Ugyfelek", new { id = u.Id }, null)
-                    </td>
-                    <td>
-                        @u.ElofizetesTipus.Nev
-                    </td>
-                    <td>
-                        <button data-ugyfel-id="@u.Id" class="btn-link js-torles">Törlés</button>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
+<table id="tablazat" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>ügyfél neve</th>
+            <th>előfizetés típusa</th>
+            <th>törlés</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
 
 @section scripts
 {
     <script>
         $(document).ready(function () {
-            $("#tablazat .js-torles").on("click", function () {
+            var tabla = $("#tablazat").DataTable({
+                ajax: {
+                    url: "/api/ugyfelek",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "nev",
+                        render: function (data, type, ugyfel) {
+                            return "<a href='/ugyfelek/szerkesztes/" + ugyfel.id + "'>" + ugyfel.nev + "</a>";
+                        }
+                    },
+                    {
+                        data: "elofizetesTipus.nev"
+                    },
+                    {
+                        data: "id",
+                        render: function (data) {
+                            return "<button class='btn-link js-torles' data-ugyfel-id=" + data + ">Törlés</button>";
+                        }
+                    }
+                ]
+            });
+
+            $("#tablazat").on("click", ".js-torles", function () {
                 var gomb = $(this);
                 bootbox.confirm(
                     "Biztosan törölni akarod ezt az ügyfelet?",
@@ -56,9 +57,7 @@ else
                                 url: "/api/ugyfelek/" + gomb.attr("data-ugyfel-id"),
                                 method: "DELETE",
                                 success: function () {
-                                    //console.log("SIKER!!");
-                                    gomb.parents("tr").remove();
-                                    //location.reload();
+                                    tabla.row(gomb.parents("tr")).remove().draw();
                                 }
                             });
                         }

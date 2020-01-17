@@ -14,6 +14,9 @@ namespace WEB191010.App_Start
         {
             Mapper.CreateMap<Ugyfel, UgyfelDto>();
             Mapper.CreateMap<UgyfelDto, Ugyfel>();
+
+            Mapper.CreateMap<ElofizetesTipus, ElofizetesTipusDto>();
+            Mapper.CreateMap<ElofizetesTipusDto, ElofizetesTipus>();
         }
     }
 }

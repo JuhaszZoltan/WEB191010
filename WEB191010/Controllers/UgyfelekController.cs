@@ -89,11 +89,9 @@ namespace WEB191010.Controllers
 
         public ViewResult Index()
         {
-            var ufk = _context.Ugyfelek.Include(u => u.ElofizetesTipus).ToList();
             if (User.IsInRole(RoleNevek.Admin))
-                return View("AdminIndex", ufk);
-
-            return View("VendegIndex", ufk);
+                return View("AdminIndex");
+            return View("VendegIndex");
         }
 
         [Authorize(Roles = RoleNevek.Admin)]
